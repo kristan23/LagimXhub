@@ -7,7 +7,7 @@ local beastHubIcon = 109838189843903
 -- local isVerified = ...  -- grab the passed value
 local isVerified = getgenv()._bh_isVerified
 local expiryText=isVerified==true and "lifetime" or (isVerified and tostring(isVerified) or "Lifetime")
-local scriptTitle = "BeastHubXDevsHub | Exp: "..expiryText
+local scriptTitle = "BeastHubXRyuXHub | Exp: "..expiryText
 if getgenv().BeastHubLoaded then
     if Rayfield then
         Rayfield:Notify({
