@@ -723,7 +723,7 @@ local function getFarmSpawnCFrame() --old code
 end
 
 
-local positionForPlaceEggs = "Left - spread out"
+local positionForPlaceEggs = "Diamond"
 
 local function getPositionForPlaceEggs()
     local eggOffsets
