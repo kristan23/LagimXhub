@@ -2968,19 +2968,19 @@ local Toggle_bhubESP = PetEggs:CreateToggle({
 
                                 if isHuge then
                                     if rawKG < 5 then
-                                        label.Text = '<font color="rgb(255,0,0)"><b>ARAY KO!</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>ARAY KO!</b></font>\n<font color="rgb(4, 100%, 50%)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     elseif rawKG < 8 then
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(4, 100%, 50%)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     else
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDOOOOO!!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDOOOOO!!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(4, 100%, 50%)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     end
                                 else
-                                    label.Text = '<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                    label.Text = '<font color="rgb(4, 100%, 50%)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                 end
 
-                                label.TextColor3 = Color3.fromRGB(204, 204, 0)
+                                label.TextColor3 = Color3.fromRGB(4, 100%, 50%)
                                 label.TextStrokeTransparency = 0.5
                                 label.TextScaled = false
                                 label.TextSize = 18
