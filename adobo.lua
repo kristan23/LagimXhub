@@ -2968,16 +2968,16 @@ local Toggle_bhubESP = PetEggs:CreateToggle({
 
                                 if isHuge then
                                     if rawKG < 5 then
-                                        label.Text = '<font color="rgb(255,0,0)"><b>ARAY KO!</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>ARAY KO!</b></font>\n<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
                                     elseif rawKG < 8 then
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
                                     else
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDOOOOO!!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDOOOOO!!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
                                     end
                                 else
-                                    label.Text = '<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                    label.Text = '<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
                                 end
 
                                 label.TextColor3 = Color3.fromRGB(255, 0, 0)
