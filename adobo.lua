@@ -7,7 +7,7 @@ local beastHubIcon = 109838189843903
 -- local isVerified = ...  -- grab the passed value
 local isVerified = getgenv()._bh_isVerified
 local expiryText=isVerified==true and "lifetime" or (isVerified and tostring(isVerified) or "Lifetime")
-local scriptTitle = "BeastHubXDevsHub | Exp: "..expiryText
+local scriptTitle = "BeastHubXRyuxHub | Exp: "..expiryText
 if getgenv().BeastHubLoaded then
     if Rayfield then
         Rayfield:Notify({
@@ -723,35 +723,32 @@ local function getFarmSpawnCFrame() --old code
 end
 
 
-local positionForPlaceEggs = "Diamond" -- default position
+local positionForPlaceEggs = "Left - spread out"
 
 local function getPositionForPlaceEggs()
     local eggOffsets
 
-    if positionForPlaceEggs == "Diamond" then
+    if positionForPlaceEggs == "Left - spread out" then
         eggOffsets = {
-            Vector3.new(0, 0, -27),
-
+            Vector3.new(-36, 0, -18),
+            Vector3.new(-27, 0, -18),
+            Vector3.new(-18, 0, -18),
             Vector3.new(-9, 0, -18),
-            Vector3.new(9, 0, -18),
 
-            Vector3.new(-18, 0, -9),
-            Vector3.new(0, 0, -9),
-            Vector3.new(18, 0, -9),
+            Vector3.new(-36, 0, -33),
+            Vector3.new(-27, 0, -33),
+            Vector3.new(-18, 0, -33),
+            Vector3.new(-9, 0, -33),
 
-            Vector3.new(-27, 0, 0),
-            Vector3.new(-9, 0, 0),
-            Vector3.new(9, 0, 0),
-            Vector3.new(27, 0, 0),
+            Vector3.new(-36, 0, -48),
+            Vector3.new(-27, 0, -48),
+            Vector3.new(-18, 0, -48),
+            Vector3.new(-9, 0, -48),
 
-            Vector3.new(-18, 0, 9),
-            Vector3.new(0, 0, 9),
-            Vector3.new(18, 0, 9),
-
-            Vector3.new(-9, 0, 18),
-            Vector3.new(9, 0, 18),
-
-            Vector3.new(0, 0, 27)
+            Vector3.new(-36, 0, -63),
+            Vector3.new(-27, 0, -63),
+            Vector3.new(-18, 0, -63),
+            Vector3.new(-9, 0, -63),
         }
 
     elseif positionForPlaceEggs == "Right - spread out" then
