@@ -1,13 +1,13 @@
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
-local Rayfield = getgenv().BeastHubRayfield
+local Rayfield = getgenv().RyuHubXRayfield
 local beastHubIcon = 109838189843903
 
 -- local isVerified = ...  -- grab the passed value
 local isVerified = getgenv()._bh_isVerified
 local expiryText=isVerified==true and "lifetime" or (isVerified and tostring(isVerified) or "Lifetime")
-local scriptTitle = "BeastHubXRyuxHub | Exp: "..expiryText
+local scriptTitle = "RyuHub | Exp: "..expiryText
 if getgenv().BeastHubLoaded then
     if Rayfield then
         Rayfield:Notify({
