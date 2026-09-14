@@ -3583,17 +3583,17 @@ local Toggle_smartAutoHatch = PetEggs:CreateToggle({
 
                                                         elseif (isRare and currentNumberKG < skipHatchRareAboveKG) or (not isRare) then --also add the skip rare threshold here 
                                                             -- print("inside first else if")
-                                                            -- if not string.find(koiLoady, "custom") then
-                                                            --     while smartAutoHatchingEnabled and curLoadoutNum ~= tonumber(koiLoady) do
-                                                            --         myFunctions.switchToLoadout(koiLoady, getFarmSpawnCFrame, beastHubNotify)
-                                                            --         task.wait(2)
-                                                            --         curLoadoutNum = getCurrentLoadoutNumber()
-                                                            --         task.wait(1)
-                                                            --         if curLoadoutNum == tonumber(koiLoady) then
-                                                            --             task.wait(8)
-                                                            --         end
-                                                            --     end
-                                                            -- else
+                                                             if not string.find(koiLoady, "custom") then
+                                                                 while smartAutoHatchingEnabled and curLoadoutNum ~= tonumber(koiLoady) do
+                                                                     myFunctions.switchToLoadout(koiLoady, getFarmSpawnCFrame, beastHubNotify)
+                                                                     task.wait(2)
+                                                                     curLoadoutNum = getCurrentLoadoutNumber()
+                                                                     task.wait(1)
+                                                                     if curLoadoutNum == tonumber(koiLoady) then
+                                                                         task.wait(8)
+                                                                     end
+                                                                 end
+                                                             else
                                                                 if customSwitchedToKoi == false then
                                                                     myFunctions.switchToLoadout(koiLoady, getFarmSpawnCFrame, beastHubNotify)
                                                                     customSwitchedToKoi = true
