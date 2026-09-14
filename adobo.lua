@@ -226,7 +226,7 @@ startEggStatusRealTimeUpdate()
 local Window = Rayfield:CreateWindow({
    Name = scriptTitle,
    Icon = beastHubIcon, --BeastHub logo
-   LoadingTitle = "BeastHub",
+   LoadingTitle = "BeastHubXJowaoHub",
    LoadingSubtitle = "by Team Forgotten",
    ShowText = "Rayfield",
    Theme = "Default",
