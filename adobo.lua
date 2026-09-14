@@ -772,24 +772,23 @@ local function getPositionForPlaceEggs()
 
     elseif positionForPlaceEggs == "Left - stacked" then
         eggOffsets = {
-            Vector3.new(18, 0, -36),
+            Vector3.new(-26, 0, -36),
+            Vector3.new(-22, 0, -36),
+            Vector3.new(-18, 0, -36),
+            Vector3.new(-14, 0, -36),
+            Vector3.new(-10, 0, -36),
 
-            Vector3.new(14, 0, -40),
-            Vector3.new(18, 0, -40),
-            Vector3.new(22, 0, -40),
+            Vector3.new(-14, 0, -40),
 
-            Vector3.new(12, 0, -44),
-            Vector3.new(24, 0, -44),
+            Vector3.new(-18, 0, -44),
 
-            Vector3.new(12, 0, -48),
-            Vector3.new(18, 0, -48),
-            Vector3.new(24, 0, -48),
+            Vector3.new(-22, 0, -48),
 
-            Vector3.new(14, 0, -52),
-            Vector3.new(18, 0, -52),
-            Vector3.new(22, 0, -52),
-
-            Vector3.new(18, 0, -56),
+            Vector3.new(-26, 0, -52),
+            Vector3.new(-22, 0, -52),
+            Vector3.new(-18, 0, -52),
+            Vector3.new(-14, 0, -52),
+            Vector3.new(-10, 0, -52),
         }
 
     elseif positionForPlaceEggs == "Right - stacked" then
