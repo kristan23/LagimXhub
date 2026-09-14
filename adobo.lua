@@ -730,54 +730,44 @@ local function getPositionForPlaceEggs()
 
     if positionForPlaceEggs == "Left - spread out" then
         eggOffsets = {
-            Vector3.new(-18, 0, -18),
+            Vector3.new(18, 0, -36),
 
-            Vector3.new(-20, 0, -22),
-            Vector3.new(-16, 0, -22),
+            Vector3.new(22, 0, -40),
+            Vector3.new(18, 0, -40),
+            Vector3.new(14, 0, -40),
 
-            Vector3.new(-22, 0, -26),
-            Vector3.new(-18, 0, -26),
-            Vector3.new(-14, 0, -26),
+            Vector3.new(26, 0, -44),
+            Vector3.new(22, 0, -44),
+            Vector3.new(18, 0, -44),
+            Vector3.new(14, 0, -44),
+            Vector3.new(10, 0, -44),
 
-            Vector3.new(-24, 0, -30),
-            Vector3.new(-20, 0, -30),
-            Vector3.new(-16, 0, -30),
-            Vector3.new(-12, 0, -30),
+            Vector3.new(22, 0, -48),
+            Vector3.new(18, 0, -48),
+            Vector3.new(14, 0, -48),
 
-            Vector3.new(-22, 0, -34),
-            Vector3.new(-18, 0, -34),
-            Vector3.new(-14, 0, -34),
-
-            Vector3.new(-20, 0, -38),
-            Vector3.new(-16, 0, -38),
-
-            Vector3.new(-18, 0, -42),
+            Vector3.new(18, 0, -52),
         }
 
     elseif positionForPlaceEggs == "Right - spread out" then
         eggOffsets = {
-            Vector3.new(18, 0, -18),
+            Vector3.new(-18, 0, -36),
 
-            Vector3.new(16, 0, -22),
-            Vector3.new(20, 0, -22),
+            Vector3.new(-22, 0, -40),
+            Vector3.new(-18, 0, -40),
+            Vector3.new(-14, 0, -40),
 
-            Vector3.new(14, 0, -26),
-            Vector3.new(18, 0, -26),
-            Vector3.new(22, 0, -26),
+            Vector3.new(-26, 0, -44),
+            Vector3.new(-22, 0, -44),
+            Vector3.new(-18, 0, -44),
+            Vector3.new(-14, 0, -44),
+            Vector3.new(-10, 0, -44),
 
-            Vector3.new(12, 0, -30),
-            Vector3.new(16, 0, -30),
-            Vector3.new(20, 0, -30),
-            Vector3.new(24, 0, -30),
+            Vector3.new(-22, 0, -48),
+            Vector3.new(-18, 0, -48),
+            Vector3.new(-14, 0, -48),
 
-            Vector3.new(14, 0, -34),
-            Vector3.new(18, 0, -34),
-            Vector3.new(22, 0, -34),
-
-            Vector3.new(16, 0, -38),
-            Vector3.new(20, 0, -38),
-
-Vector3.new(18, 0, -42),
+            Vector3.new(-18, 0, -52),
         }
 
     elseif positionForPlaceEggs == "Left - stacked" then
