@@ -3599,7 +3599,7 @@ local Toggle_smartAutoHatch = PetEggs:CreateToggle({
                                                                     customSwitchedToKoi = true
                                                                     task.wait(1)
                                                                 end          
-                                                            -- end
+                                                            end
 
                                                             if firstEggHatched == false then
                                                                 beastHubNotify("Hatch delay: "..tostring(Input_delayToHatch.CurrentValue) or "","",3)
