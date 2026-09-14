@@ -730,25 +730,25 @@ local function getPositionForPlaceEggs()
 
     if positionForPlaceEggs == "Left - spread out" then
         eggOffsets = {
-            Vector3.new(-36, 0, -18),
-            Vector3.new(-27, 0, -18),
             Vector3.new(-18, 0, -18),
-            Vector3.new(-9, 0, -18),
 
-            Vector3.new(-36, 0, -33),
-            Vector3.new(-27, 0, -33),
-            Vector3.new(-18, 0, -33),
-            Vector3.new(-9, 0, -33),
+            Vector3.new(-22.5, 0, -27),
+            Vector3.new(-13.5, 0, -27),
 
-            Vector3.new(-36, 0, -48),
-            Vector3.new(-27, 0, -48),
-            Vector3.new(-18, 0, -48),
-            Vector3.new(-9, 0, -48),
+            Vector3.new(-27, 0, -36),
+            Vector3.new(-18, 0, -36),
+            Vector3.new(-9, 0, -36),
 
-            Vector3.new(-36, 0, -63),
-            Vector3.new(-27, 0, -63),
-            Vector3.new(-18, 0, -63),
-            Vector3.new(-9, 0, -63),
+            Vector3.new(-31.5, 0, -45),
+            Vector3.new(-22.5, 0, -45),
+            Vector3.new(-13.5, 0, -45),
+            Vector3.new(-4.5, 0, -45),
+
+            Vector3.new(-36, 0, -54),
+            Vector3.new(-27, 0, -54),
+            Vector3.new(-18, 0, -54),
+            Vector3.new(-9, 0, -54),
+            Vector3.new(0, 0, -54),
         }
 
     elseif positionForPlaceEggs == "Right - spread out" then
