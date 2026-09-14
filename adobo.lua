@@ -774,10 +774,32 @@ local function getPositionForPlaceEggs()
             Vector3.new(37, 0, -63),
         }
 
-   elseif positionForPlaceEggs == "Circle - stacked" then
+elseif positionForPlaceEggs == "Left - stacked" then
+    eggOffsets = {
+        Vector3.new(-30, 0, -12),
+        Vector3.new(-27, 0, -12),
+        Vector3.new(-24, 0, -12),
+        Vector3.new(-21, 0, -12),
+
+        Vector3.new(-30, 0, -15),
+        Vector3.new(-27, 0, -15),
+        Vector3.new(-24, 0, -15),
+        Vector3.new(-21, 0, -15),
+
+        Vector3.new(-30, 0, -18),
+        Vector3.new(-27, 0, -18),
+        Vector3.new(-24, 0, -18),
+        Vector3.new(-21, 0, -18),
+
+        Vector3.new(-30, 0, -21),
+        Vector3.new(-27, 0, -21),
+        Vector3.new(-24, 0, -21),
+        Vector3.new(-21, 0, -21),
+    }
+elseif positionForPlaceEggs == "Circle - stacked" then
     eggOffsets = {}
-    local radius = 8 -- Distance from center
-    local totalEggs = 16 -- Number of eggs in the circle
+    local radius = 8
+    local totalEggs = 16
     
     for i = 1, totalEggs do
         local angle = (i - 1) * (2 * math.pi / totalEggs)
@@ -785,7 +807,6 @@ local function getPositionForPlaceEggs()
         local z = math.sin(angle) * radius
         table.insert(eggOffsets, Vector3.new(x, 0, z))
     end
-
     elseif positionForPlaceEggs == "Right - stacked" then
         eggOffsets = {
             Vector3.new(16, 0, -12),
