@@ -730,27 +730,6 @@ local function getPositionForPlaceEggs()
 
     if positionForPlaceEggs == "Left - spread out" then
         eggOffsets = {
-            Vector3.new(18, 0, -36),
-
-            Vector3.new(22, 0, -40),
-            Vector3.new(18, 0, -40),
-            Vector3.new(14, 0, -40),
-
-            Vector3.new(26, 0, -44),
-            Vector3.new(22, 0, -44),
-            Vector3.new(18, 0, -44),
-            Vector3.new(14, 0, -44),
-            Vector3.new(10, 0, -44),
-
-            Vector3.new(22, 0, -48),
-            Vector3.new(18, 0, -48),
-            Vector3.new(14, 0, -48),
-
-            Vector3.new(18, 0, -52),
-        }
-
-    elseif positionForPlaceEggs == "Right - spread out" then
-        eggOffsets = {
             Vector3.new(-18, 0, -36),
 
             Vector3.new(-22, 0, -40),
@@ -768,6 +747,27 @@ local function getPositionForPlaceEggs()
             Vector3.new(-14, 0, -48),
 
             Vector3.new(-18, 0, -52),
+        }
+
+    elseif positionForPlaceEggs == "Right - spread out" then
+        eggOffsets = {
+            Vector3.new(18, 0, -36),
+
+            Vector3.new(22, 0, -40),
+            Vector3.new(18, 0, -40),
+            Vector3.new(14, 0, -40),
+
+            Vector3.new(26, 0, -44),
+            Vector3.new(22, 0, -44),
+            Vector3.new(18, 0, -44),
+            Vector3.new(14, 0, -44),
+            Vector3.new(10, 0, -44),
+
+            Vector3.new(22, 0, -48),
+            Vector3.new(18, 0, -48),
+            Vector3.new(14, 0, -48),
+
+            Vector3.new(18, 0, -52),
         }
 
     elseif positionForPlaceEggs == "Left - stacked" then
