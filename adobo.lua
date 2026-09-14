@@ -7,11 +7,11 @@ local beastHubIcon = 109838189843903
 -- local isVerified = ...  -- grab the passed value
 local isVerified = getgenv()._bh_isVerified
 local expiryText=isVerified==true and "lifetime" or (isVerified and tostring(isVerified) or "Lifetime")
-local scriptTitle = "BeastHubXRyuXHub | Exp: "..expiryText
+local scriptTitle = "BeastHubXRyuxHub | Exp: "..expiryText
 if getgenv().BeastHubLoaded then
     if Rayfield then
         Rayfield:Notify({
-            Title = "BeastHub",
+            Title = "BeastHubXRyuxHub",
             Content = "Already running! Press H",
             Duration = 5,
             Image = beastHubIcon
@@ -2968,22 +2968,22 @@ local Toggle_bhubESP = PetEggs:CreateToggle({
 
                                 if isHuge then
                                     if rawKG < 5 then
-                                        label.Text = '<font color="rgb(255,0,0)"><b>ARAY KO!</b></font>\n<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>ARAY KO!</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     elseif rawKG < 8 then
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     else
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDOOOOO!!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
+                                        label.Text = '<font color="rgb(255,0,0)"><b>PALDOOOOO!!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     end
                                 else
-                                    label.Text = '<font color="rgb(255,0,0)"><b>' .. petName .. '</b></font><font color="rgb(255,0,0)"><b> = ' .. petKG .. 'kg</b></font>'
+                                    label.Text = '<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                 end
 
-                                label.TextColor3 = Color3.fromRGB(255, 0, 0)
+                                label.TextColor3 = Color3.fromRGB(255,0,0)
                                 label.TextStrokeTransparency = 0.5
                                 label.TextScaled = false
-                                label.TextSize = 18
+                                label.TextSize = 13
                                 label.Font = Enum.Font.SourceSans
                                 label.Parent = billboard
                             end
@@ -3583,23 +3583,23 @@ local Toggle_smartAutoHatch = PetEggs:CreateToggle({
 
                                                         elseif (isRare and currentNumberKG < skipHatchRareAboveKG) or (not isRare) then --also add the skip rare threshold here 
                                                             -- print("inside first else if")
-                                                             if not string.find(koiLoady, "custom") then
-                                                                 while smartAutoHatchingEnabled and curLoadoutNum ~= tonumber(koiLoady) do
-                                                                     myFunctions.switchToLoadout(koiLoady, getFarmSpawnCFrame, beastHubNotify)
-                                                                     task.wait(2)
-                                                                     curLoadoutNum = getCurrentLoadoutNumber()
-                                                                     task.wait(1)
-                                                                     if curLoadoutNum == tonumber(koiLoady) then
-                                                                         task.wait(8)
-                                                                     end
-                                                                 end
-                                                             else
+                                                            -- if not string.find(koiLoady, "custom") then
+                                                            --     while smartAutoHatchingEnabled and curLoadoutNum ~= tonumber(koiLoady) do
+                                                            --         myFunctions.switchToLoadout(koiLoady, getFarmSpawnCFrame, beastHubNotify)
+                                                            --         task.wait(2)
+                                                            --         curLoadoutNum = getCurrentLoadoutNumber()
+                                                            --         task.wait(1)
+                                                            --         if curLoadoutNum == tonumber(koiLoady) then
+                                                            --             task.wait(8)
+                                                            --         end
+                                                            --     end
+                                                            -- else
                                                                 if customSwitchedToKoi == false then
                                                                     myFunctions.switchToLoadout(koiLoady, getFarmSpawnCFrame, beastHubNotify)
                                                                     customSwitchedToKoi = true
                                                                     task.wait(1)
                                                                 end          
-                                                            end
+                                                            -- end
 
                                                             if firstEggHatched == false then
                                                                 beastHubNotify("Hatch delay: "..tostring(Input_delayToHatch.CurrentValue) or "","",3)
