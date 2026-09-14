@@ -723,12 +723,12 @@ local function getFarmSpawnCFrame() --old code
 end
 
 
-local positionForPlaceEggs = "Left - Diamond"
+local positionForPlaceEggs = "Left - spread out"
 
 local function getPositionForPlaceEggs()
     local eggOffsets
 
-    if positionForPlaceEggs == "Left - Diamond" then
+    if positionForPlaceEggs == "Left - spread out" then
         eggOffsets = {
             Vector3.new(-18, 0, -18),
 
@@ -754,7 +754,7 @@ local function getPositionForPlaceEggs()
             Vector3.new(-18, 0, -42),
         }
 
-    elseif positionForPlaceEggs == "Right - Diamond" then
+    elseif positionForPlaceEggs == "Right - spread out" then
         eggOffsets = {
             Vector3.new(18, 0, -18),
 
