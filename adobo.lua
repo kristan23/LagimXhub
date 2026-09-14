@@ -723,35 +723,12 @@ local function getFarmSpawnCFrame() --old code
 end
 
 
-local positionForPlaceEggs = "Left - spread out"
+local positionForPlaceEggs = "Left - Diamond"
 
 local function getPositionForPlaceEggs()
     local eggOffsets
 
-    if positionForPlaceEggs == "Left - spread out" then
-        eggOffsets = {
-            Vector3.new(-18, 0, -18),
-
-            Vector3.new(-20, 0, -22),
-            Vector3.new(-16, 0, -22),
-
-            Vector3.new(-22, 0, -26),
-            Vector3.new(-18, 0, -26),
-            Vector3.new(-14, 0, -26),
-
-            Vector3.new(-24, 0, -30),
-            Vector3.new(-20, 0, -30),
-            Vector3.new(-16, 0, -30),
-            Vector3.new(-12, 0, -30),
-
-            Vector3.new(-26, 0, -34),
-            Vector3.new(-22, 0, -34),
-            Vector3.new(-18, 0, -34),
-            Vector3.new(-14, 0, -34),
-            Vector3.new(-10, 0, -34),
-        }
-
-    elseif positionForPlaceEggs == "Right - spread out" then
+    if positionForPlaceEggs == "Left - Diamond" then
         eggOffsets = {
             Vector3.new(-18, 0, -18),
 
@@ -775,6 +752,32 @@ local function getPositionForPlaceEggs()
             Vector3.new(-16, 0, -38),
 
             Vector3.new(-18, 0, -42),
+        }
+
+    elseif positionForPlaceEggs == "Right - Diamond" then
+        eggOffsets = {
+            Vector3.new(18, 0, -18),
+
+            Vector3.new(16, 0, -22),
+            Vector3.new(20, 0, -22),
+
+            Vector3.new(14, 0, -26),
+            Vector3.new(18, 0, -26),
+            Vector3.new(22, 0, -26),
+
+            Vector3.new(12, 0, -30),
+            Vector3.new(16, 0, -30),
+            Vector3.new(20, 0, -30),
+            Vector3.new(24, 0, -30),
+
+            Vector3.new(14, 0, -34),
+            Vector3.new(18, 0, -34),
+            Vector3.new(22, 0, -34),
+
+            Vector3.new(16, 0, -38),
+            Vector3.new(20, 0, -38),
+
+            Vector3.new(18, 0, -42),
         }
 
     elseif positionForPlaceEggs == "Left - stacked" then
