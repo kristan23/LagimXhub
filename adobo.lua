@@ -2977,7 +2977,7 @@ local Toggle_bhubESP = PetEggs:CreateToggle({
                                 label.TextColor3 = Color3.fromRGB(255, 0, 0)
                                 label.TextStrokeTransparency = 0.5
                                 label.TextScaled = false
-                                label.TextSize = 15
+                                label.TextSize = 12
                                 label.Font = Enum.Font.SourceSans
                                 label.Parent = billboard
                             end
