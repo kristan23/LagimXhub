@@ -146,41 +146,6 @@ local function createEggStatusGUI()
     local player = game.Players.LocalPlayer
     local playerGui = player:WaitForChild("PlayerGui")
 
-    if playerGui:FindFirstChild("EggStatusGUI") then
-        playerGui.EggStatusGUI:Destroy()
-    end
-
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "EggStatusGUI"
-    screenGui.ResetOnSpawn = 999
-    screenGui.Parent = playerGui
-
-    local frame = Instance.new("Frame")
-    frame.Size = UDim2.new(0, 140, 0, 16)
-    frame.Position = UDim2.new(1, -220, 0, 10)
-    frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    frame.BackgroundTransparency = 0.3
-    frame.BorderSizePixel = 0
-    frame.Parent = screenGui
-
-    local corner = Instance.new("UICorner")
-    corner.CornerRadius = UDim.new(0, 4)
-    corner.Parent = frame
-
-    local label = Instance.new("TextLabel")
-    label.Size = UDim2.new(1, -4, 1, 0)
-    label.Position = UDim2.new(0, 2, 0, 0)
-    label.BackgroundTransparency = 1
-    label.TextColor3 = Color3.fromRGB(255, 255, 255)
-    label.TextSize = 9
-    label.Font = Enum.Font.GothamBold
-    label.Text = "Egg Status: --"
-    label.TextXAlignment = Enum.TextXAlignment.Left
-    label.Parent = frame
-
-    eggStatusGUI = screenGui
-    eggStatusLabel = label
-    return screenGui
 end
 
 local function updateEggStatus(fixedValue, newValue, placedCount)
