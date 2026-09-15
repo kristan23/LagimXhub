@@ -152,7 +152,7 @@ local function createEggStatusGUI()
 
     local screenGui = Instance.new("ScreenGui")
     screenGui.Name = "EggStatusGUI"
-    screenGui.ResetOnSpawn = false
+    screenGui.ResetOnSpawn = 999
     screenGui.Parent = playerGui
 
     local frame = Instance.new("Frame")
