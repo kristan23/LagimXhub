@@ -688,12 +688,12 @@ local function getFarmSpawnCFrame() --old code
 end
 
 
-local positionForPlaceEggs = "Left - spread out"
+local positionForPlaceEggs = "Left - Diamond"
 
 local function getPositionForPlaceEggs()
     local eggOffsets
 
-    if positionForPlaceEggs == "Left - spread out" then
+    if positionForPlaceEggs == "Left - Diamond" then
         eggOffsets = {
             Vector3.new(-18, 0, -36),
 
@@ -1720,8 +1720,8 @@ local Input_delayToHatch = PetEggs:CreateInput({
 
 local position_placeEggs = PetEggs:CreateDropdown({
     Name = "Position",
-    Options = {"Left - spread out","Right - spread out", "Left - stacked", "Right - stacked", "Random - stacked"},
-    CurrentOption = {"Left - spread out"},
+    Options = {"Left - Diamond","Right - spread out", "Left - stacked", "Right - stacked", "Random - stacked"},
+    CurrentOption = {"Left - Diamond"},
     MultipleOptions = false,
     Flag = "positionPlaceEggs", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Options)
