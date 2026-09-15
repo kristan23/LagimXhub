@@ -4105,7 +4105,7 @@ Misc:CreateToggle({
 
 
 Misc:CreateToggle({
-    Name = "BeastHub Notifs (default ON)",
+    Name = "LagimXHub Notifs (default ON)",
     CurrentValue = true,
     Flag = "beastHubNotifs",
     Callback = function(Value)
