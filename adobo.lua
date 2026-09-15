@@ -2,7 +2,7 @@ if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
 local Rayfield = getgenv().BeastHubRayfield
-local beastHubIcon = 92535496848050
+local beastHubIcon = 83974392136213
 
 -- local isVerified = ...  -- grab the passed value
 local isVerified = getgenv()._bh_isVerified
