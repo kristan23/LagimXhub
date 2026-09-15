@@ -758,27 +758,25 @@ local function getPositionForPlaceEggs()
             Vector3.new(-16, 0, -54),
         }
 
-    elseif positionForPlaceEggs == "Right - stacked" then
+    elseif positionForPlaceEggs == "Right - Hourglass" then
         eggOffsets = {
-            Vector3.new(16, 0, -12),
-            Vector3.new(19, 0, -12),
-            Vector3.new(22, 0, -12),
-            Vector3.new(25, 0, -12),
+            Vector3.new(12, 0, -38),
+            Vector3.new(18, 0, -38),
+            Vector3.new(24, 0, -38),
 
-            Vector3.new(16, 0, -15),
-            Vector3.new(19, 0, -15),
-            Vector3.new(22, 0, -15),
-            Vector3.new(25, 0, -15),
+            Vector3.new(15, 0, -34),
+            Vector3.new(21, 0, -34),
 
-            Vector3.new(16, 0, -18),
-            Vector3.new(19, 0, -18),
-            Vector3.new(22, 0, -18),
-            Vector3.new(25, 0, -18),
+            Vector3.new(12, 0, -30),
+            Vector3.new(18, 0, -30),
+            Vector3.new(24, 0, -30),
 
-            Vector3.new(16, 0, -21),
-            Vector3.new(19, 0, -21),
-            Vector3.new(22, 0, -21),
-            Vector3.new(25, 0, -21),
+            Vector3.new(15, 0, -26),
+            Vector3.new(21, 0, -26),
+
+            Vector3.new(12, 0, -22),
+            Vector3.new(18, 0, -22),
+            Vector3.new(24, 0, -22),
         }
 
     elseif positionForPlaceEggs == "Random - stacked" then
@@ -1720,7 +1718,7 @@ local Input_delayToHatch = PetEggs:CreateInput({
 
 local position_placeEggs = PetEggs:CreateDropdown({
     Name = "Position",
-    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - stacked", "Random - stacked"},
+    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - Hourglass", "Random - stacked"},
     CurrentOption = {"Left - Diamond"},
     MultipleOptions = false,
     Flag = "positionPlaceEggs", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
