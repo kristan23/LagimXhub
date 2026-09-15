@@ -11,7 +11,7 @@ local scriptTitle = "BeastHubXJowaoHub | Exp: "..expiryText
 if getgenv().BeastHubLoaded then
     if Rayfield then
         Rayfield:Notify({
-            Title = "BeastHubXRyuxHub",
+            Title = "LagimxHub",
             Content = "Already running! Press H",
             Duration = 5,
             Image = beastHubIcon
@@ -226,9 +226,9 @@ startEggStatusRealTimeUpdate()
 local Window = Rayfield:CreateWindow({
    Name = scriptTitle,
    Icon = beastHubIcon, --BeastHub logo
-   LoadingTitle = "BeastHubXJowaoHub",
+   LoadingTitle = "LagimXHub",
    LoadingSubtitle = "by Team Forgotten",
-   ShowText = "JowaoHub",
+   ShowText = "LagimXHub",
    Theme = "Default",
    ToggleUIKeybind = "H",
    ConfigurationSaving = {
