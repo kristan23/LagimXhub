@@ -2976,7 +2976,7 @@ local Toggle_bhubESP = PetEggs:CreateToggle({
                                     label.Text = '<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                 end
 
-                                label.TextColor3 = Color3.fromRGB(255, 0, 0)
+                                label.TextColor3 = Color3.fromRGB(0, 0, 0)
                                 label.TextStrokeTransparency = 0.5
                                 label.TextScaled = false
                                 label.TextSize = 12
