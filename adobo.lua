@@ -811,48 +811,50 @@ local function getPositionForPlaceEggs()
         }
 
         
-    elseif positionForPlaceEggs == "Right - Hourglass" then
+    elseif positionForPlaceEggs == "Right - V Shape" then
         eggOffsets = {
-            Vector3.new(12, 0, -38),
-            Vector3.new(18, 0, -38),
-            Vector3.new(24, 0, -38),
+            Vector3.new(8, 0, -36),
+            Vector3.new(28, 0, -36),
 
-            Vector3.new(15, 0, -34),
-            Vector3.new(21, 0, -34),
+            Vector3.new(10, 0, -40),
+            Vector3.new(26, 0, -40),
 
-            Vector3.new(12, 0, -30),
-            Vector3.new(18, 0, -30),
-            Vector3.new(24, 0, -30),
+            Vector3.new(12, 0, -44),
+            Vector3.new(24, 0, -44),
 
-            Vector3.new(15, 0, -26),
-            Vector3.new(21, 0, -26),
+            Vector3.new(14, 0, -48),
+            Vector3.new(22, 0, -48),
 
-            Vector3.new(12, 0, -22),
-            Vector3.new(18, 0, -22),
-            Vector3.new(24, 0, -22),
-        }
-        
-    elseif positionForPlaceEggs == "Right - X Pattern" then
-        eggOffsets = {
-            Vector3.new(18, 0, -36),
-            Vector3.new(26, 0, -36),
+            Vector3.new(16, 0, -52),
+            Vector3.new(20, 0, -52),
 
-            Vector3.new(22, 0, -40),
-            Vector3.new(30, 0, -40),
-
-            Vector3.new(26, 0, -44),
-            Vector3.new(34, 0, -44),
-
-            Vector3.new(30, 0, -48),
-
-            Vector3.new(26, 0, -52),
-            Vector3.new(34, 0, -52),
-
-            Vector3.new(22, 0, -56),
-            Vector3.new(30, 0, -56),
+            Vector3.new(18, 0, -56),
 
             Vector3.new(18, 0, -60),
-            Vector3.new(26, 0, -60),
+            Vector3.new(18, 0, -64),
+        }
+        
+ elseif positionForPlaceEggs == "Left - V Shape" then
+        eggOffsets = {
+            Vector3.new(-8, 0, -36),
+            Vector3.new(-28, 0, -36),
+
+            Vector3.new(-10, 0, -40),
+            Vector3.new(-26, 0, -40),
+
+            Vector3.new(-12, 0, -44),
+            Vector3.new(-24, 0, -44),
+
+            Vector3.new(-14, 0, -48),
+            Vector3.new(-22, 0, -48),
+
+            Vector3.new(-16, 0, -52),
+            Vector3.new(-20, 0, -52),
+
+            Vector3.new(-18, 0, -56),
+
+            Vector3.new(-18, 0, -60),
+            Vector3.new(-18, 0, -64),
         }
         
     elseif positionForPlaceEggs == "Random - stacked" then
@@ -1794,7 +1796,7 @@ local Input_delayToHatch = PetEggs:CreateInput({
 
 local position_placeEggs = PetEggs:CreateDropdown({
     Name = "Position",
-    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - Circle", "Right - Hourglass", "Right - X Pattern", "Random - stacked"},
+    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - Circle", "Right - V Shape", "Left - V Shape", "Random - stacked"},
     CurrentOption = {"Left - Diamond"},
     MultipleOptions = false,
     Flag = "positionPlaceEggs", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
