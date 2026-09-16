@@ -1,12 +1,12 @@
 -- ==========================================
--- WHITELIST CONFIGURATION
+-- 1. WHITELIST CONFIGURATION (Top of Script)
 -- ==========================================
 local PermanentUsers = {
-    8513804685, -- Permanent User ID
+    8513804685, -- Add Permanent Roblox User IDs here
 }
 
 local TemporaryUsers = {
-    996981124, -- 7-Day User ID
+    555555555, -- Add 7-Day Temporary Roblox User IDs here
 }
 
 local Players = game:GetService("Players")
@@ -15,7 +15,7 @@ local userId = LocalPlayer.UserId
 
 _G.UserStatus = "Denied"
 
--- Check Permanent
+-- Check Permanent Access
 for _, id in ipairs(PermanentUsers) do
     if userId == id then
         _G.UserStatus = "Permanent"
@@ -23,26 +23,76 @@ for _, id in ipairs(PermanentUsers) do
     end
 end
 
--- Check Temporary (Refreshes 7 days from execution time)
+-- Check Temporary Access (Calculates 7 days from execution time)
 if _G.UserStatus == "Denied" then
     for _, id in ipairs(TemporaryUsers) do
         if userId == id then
             _G.UserStatus = "Temporary"
-            _G.ExpirationTime = os.time() + (7 * 24 * 60 * 60) -- Sets 7 Days from now
+            _G.ExpirationTime = os.time() + (7 * 24 * 60 * 60)
             break
         end
     end
 end
 
--- Kick if not whitelisted
+-- Kick immediately if user is not whitelisted
 if _G.UserStatus == "Denied" then
     LocalPlayer:Kick("Access Denied: You are not whitelisted.")
     return
 end
 
 -- ==========================================
--- YOUR RAYFIELD UI SCRIPT GOES BELOW THIS LINE
+-- 2. RAYFIELD UI INITIALIZATION
 -- ==========================================
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Script Hub",
+    LoadingTitle = "Loading Whitelist Data...",
+    LoadingSubtitle = "by User",
+    ConfigurationSaving = {
+        Enabled = false,
+    }
+})
+
+-- Create a Tab for Main Controls and Status
+local MainTab = Window:CreateTab("Main", 4483362458)
+
+-- ==========================================
+-- 3. LIVE TIMER PARAGRAPH
+-- ==========================================
+local AccessParagraph = MainTab:CreateParagraph({
+    Title = "Subscription Status", 
+    Content = "Loading access time..."
+})
+
+-- Timer Loop: Runs in background to update UI text
+task.spawn(function()
+    while task.wait(1) do
+        if _G.UserStatus == "Permanent" then
+            AccessParagraph:Set({
+                Title = "Subscription Status", 
+                Content = "Access Type: Permanent (Lifetime)"
+            })
+            break
+        elseif _G.UserStatus == "Temporary" then
+            local timeLeft = _G.ExpirationTime - os.time()
+            if timeLeft <= 0 then
+                LocalPlayer:Kick("Access Expired!")
+                break
+            end
+            
+            local days = math.floor(timeLeft / 86400)
+            local hours = math.floor((timeLeft % 86400) / 3600)
+            
+            AccessParagraph:Set({
+                Title = "Subscription Status", 
+                Content = string.format("Time Remaining: %d Days, %d Hours", days, hours)
+            })
+        end
+    end
+end)
+
+-- Put the rest of your features and buttons below this line
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
