@@ -2,106 +2,27 @@
 -- 1. WHITELIST CONFIGURATION
 -- ==========================================
 local PermanentUsers = {
-    8513804685, -- Permanent Access User ID
+    8513804685, -- Add Permanent Roblox User IDs here
 }
-
--- Format: [UserId] = Start_Unix_Timestamp
--- Current timestamp for right now is set below for testing.
-local TemporaryUsers = {
-    [996981124] = 1773683396, -- 7-Day Access starting from this exact timestamp
-}
-
-local ACCESS_DURATION = 7 * 24 * 60 * 60 -- 7 Days in seconds (604,800s)
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local userId = LocalPlayer.UserId
 
-_G.UserStatus = "Denied"
+local isWhitelisted = false
 
--- Step 1: Check Permanent List First
+-- Check Permanent Access
 for _, id in ipairs(PermanentUsers) do
     if userId == id then
-        _G.UserStatus = "Permanent"
+        isWhitelisted = true
         break
     end
 end
 
--- Step 2: Check Temporary List against real-world offline time
-if _G.UserStatus == "Denied" then
-    local startTime = TemporaryUsers[userId]
-    if startTime then
-        local expirationTime = startTime + ACCESS_DURATION
-        local timeRemaining = expirationTime - os.time()
-        
-        if timeRemaining > 0 then
-            _G.UserStatus = "Temporary"
-            _G.ExpirationTime = expirationTime
-        else
-            LocalPlayer:Kick("Access Expired! Your 7-day access period has ended.")
-            return
-        end
-    end
-end
-
--- Step 3: Kick if not in either list
-if _G.UserStatus == "Denied" then
+-- Kick immediately if user is not whitelisted
+if not isWhitelisted then
     LocalPlayer:Kick("Access Denied: Bayad ka muna boi!.")
     return
-end
-
--- Force cleanup of any old UI elements
-local CoreGui = game:GetService("CoreGui")
-local ExistingGui = CoreGui:FindFirstChild("FixedTimerGui")
-if ExistingGui then 
-    ExistingGui:Destroy() 
-end
-
--- ==========================================
--- 2. FIXED TIMER GUI (TEMPORARY USERS ONLY)
--- ==========================================
-if _G.UserStatus == "Temporary" then
-    local ScreenGui = Instance.new("ScreenGui")
-    ScreenGui.Name = "FixedTimerGui"
-    ScreenGui.Parent = CoreGui
-
-    local Frame = Instance.new("Frame")
-    Frame.Size = UDim2.new(0, 75, 0, 24)
-    Frame.Position = UDim2.new(1, -85, 0, 10)
-    Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    Frame.BackgroundTransparency = 0.2
-    Frame.BorderSizePixel = 0
-    Frame.Active = false
-    Frame.Parent = ScreenGui
-
-    local UICorner = Instance.new("UICorner")
-    UICorner.CornerRadius = UDim.new(0, 6)
-    UICorner.Parent = Frame
-
-    local TextLabel = Instance.new("TextLabel")
-    TextLabel.Size = UDim2.new(1, 0, 1, 0)
-    TextLabel.BackgroundTransparency = 1
-    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextLabel.TextSize = 12
-    TextLabel.Font = Enum.Font.SourceSansBold
-    TextLabel.Text = "7d 0h"
-    TextLabel.Parent = Frame
-
-    task.spawn(function()
-        while task.wait(1) do
-            local timeLeft = _G.ExpirationTime - os.time()
-            if timeLeft <= 0 then
-                ScreenGui:Destroy()
-                LocalPlayer:Kick("Access Expired!")
-                break
-            end
-            
-            local days = math.floor(timeLeft / 86400)
-            local hours = math.floor((timeLeft % 86400) / 3600)
-            
-            TextLabel.Text = string.format("%dd %dh", days, hours)
-        end
-    end)
 end
 
 -- ==========================================
