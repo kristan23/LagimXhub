@@ -6,7 +6,7 @@ local PermanentUsers = {
 }
 
 local TemporaryUsers = {
-    555555555, -- Add 7-Day Temporary Roblox User IDs here
+    996981124, -- Add 7-Day Temporary Roblox User IDs here
 }
 
 local Players = game:GetService("Players")
