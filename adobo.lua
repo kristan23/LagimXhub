@@ -2,11 +2,12 @@
 -- 1. WHITELIST CONFIGURATION
 -- ==========================================
 local PermanentUsers = {
-    8513804685,-- REPLACE WITH YOUR EXACT NUMERIC USER ID
+    -- Put permanent Roblox User IDs here
 }
 
 local TemporaryUsers = {
-    996981124, -- 7-Day Temporary User ID
+    8513804685, -- Temporary 7-Day Access
+    996981124,  -- Temporary 7-Day Access
 }
 
 local Players = game:GetService("Players")
@@ -15,7 +16,7 @@ local userId = LocalPlayer.UserId
 
 _G.UserStatus = "Denied"
 
--- Check Permanent Access
+-- Step 1: Check Permanent List First
 for _, id in ipairs(PermanentUsers) do
     if userId == id then
         _G.UserStatus = "Permanent"
@@ -23,7 +24,7 @@ for _, id in ipairs(PermanentUsers) do
     end
 end
 
--- Check Temporary Access
+-- Step 2: Only Check Temporary List if NOT Permanent
 if _G.UserStatus == "Denied" then
     for _, id in ipairs(TemporaryUsers) do
         if userId == id then
@@ -34,13 +35,13 @@ if _G.UserStatus == "Denied" then
     end
 end
 
--- Kick if unauthorized
+-- Step 3: Kick if not in either list
 if _G.UserStatus == "Denied" then
     LocalPlayer:Kick("Access Denied: You are not whitelisted.")
     return
 end
 
--- Clean up any lingering GUI from previous executions
+-- Force cleanup of any old UI elements
 local CoreGui = game:GetService("CoreGui")
 local ExistingGui = CoreGui:FindFirstChild("FixedTimerGui")
 if ExistingGui then 
@@ -48,7 +49,7 @@ if ExistingGui then
 end
 
 -- ==========================================
--- 2. COMPACT FIXED UI (TEMPORARY USERS ONLY)
+-- 2. FIXED TIMER GUI (TEMPORARY USERS ONLY)
 -- ==========================================
 if _G.UserStatus == "Temporary" then
     local ScreenGui = Instance.new("ScreenGui")
@@ -74,7 +75,7 @@ if _G.UserStatus == "Temporary" then
     TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextLabel.TextSize = 12
     TextLabel.Font = Enum.Font.SourceSansBold
-    TextLabel.Text = "--d --h"
+    TextLabel.Text = "7d 0h"
     TextLabel.Parent = Frame
 
     task.spawn(function()
@@ -95,7 +96,7 @@ if _G.UserStatus == "Temporary" then
 end
 
 -- ==========================================
--- YOUR REGULAR SCRIPT GOES BELOW THIS LINE
+-- YOUR REGULAR SCRIPT / RAYFIELD GOES HERE
 -- ==========================================
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
