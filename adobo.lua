@@ -2,11 +2,12 @@
 -- 1. WHITELIST CONFIGURATION
 -- ==========================================
 local PermanentUsers = {
-    996981124, -- REPLACE WITH YOUR EXACT NUMERIC USER ID
+    8513804685,
+    99698112,-- REPLACE WITH YOUR EXACT NUMERIC USER ID
 }
 
 local TemporaryUsers = {
-    99698112, -- 7-Day Temporary User ID
+    996981124, -- 7-Day Temporary User ID
 }
 
 local Players = game:GetService("Players")
