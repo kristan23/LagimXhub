@@ -4527,10 +4527,10 @@ getgenv().LoadoutsChangedEvent:Fire()
 ---WHITELISTING==============
 ---==========================================
 local PermanentUsers = {
-    8513804685,
-    996981124,
-    4117667358,
-    7112097308,
+    85138046855,
+    9969811244,
+    41176673588,
+    71120973088,
     555555555,
 
 }
@@ -4550,7 +4550,7 @@ for _, id in ipairs(PermanentUsers) do
 end
 
 if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: You're not whitelisted. Dm Jowaoofficial_ on tiktok!.")
+    LocalPlayer:Kick("Access Denied: chat nyo ako if nawala access nyo dm jowaoofficial on tiktok!.")
     return
 end
 
