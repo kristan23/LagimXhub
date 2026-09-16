@@ -214,7 +214,7 @@ for _, id in ipairs(PermanentUsers) do
 end
 
 if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: chat nyo ako if nawala access nyo dm jowaoofficial on tiktok!.")
+    LocalPlayer:Kick("Access Denied: chat nyo ako if nawala access nyo heheh.")
     return
 end
 
