@@ -3,7 +3,11 @@
 -- ==========================================
 local PermanentUsers = {
     8513804685,
-    996981124,-- Add Permanent Roblox User IDs here
+    996981124,
+    123456789,
+    123456788,
+    555555555,
+    -- You can keep adding as many IDs as you want here
 }
 
 local Players = game:GetService("Players")
