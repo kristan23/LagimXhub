@@ -1,12 +1,12 @@
 -- ==========================================
--- 1. WHITELIST CONFIGURATION (Top of Script)
+-- 1. WHITELIST CONFIGURATION
 -- ==========================================
 local PermanentUsers = {
-    996981124, -- Add Permanent Roblox User IDs here
+    996981124, -- REPLACE WITH YOUR EXACT NUMERIC USER ID
 }
 
 local TemporaryUsers = {
-    8513804685, -- Add 7-Day Temporary Roblox User IDs here
+    99698112, -- 7-Day Temporary User ID
 }
 
 local Players = game:GetService("Players")
@@ -23,7 +23,7 @@ for _, id in ipairs(PermanentUsers) do
     end
 end
 
--- Check Temporary Access (Calculates 7 days from execution time)
+-- Check Temporary Access
 if _G.UserStatus == "Denied" then
     for _, id in ipairs(TemporaryUsers) do
         if userId == id then
@@ -34,32 +34,34 @@ if _G.UserStatus == "Denied" then
     end
 end
 
--- Kick immediately if user is not whitelisted
+-- Kick if unauthorized
 if _G.UserStatus == "Denied" then
     LocalPlayer:Kick("Access Denied: You are not whitelisted.")
     return
 end
 
+-- Clean up any lingering GUI from previous executions
+local CoreGui = game:GetService("CoreGui")
+local ExistingGui = CoreGui:FindFirstChild("FixedTimerGui")
+if ExistingGui then 
+    ExistingGui:Destroy() 
+end
+
 -- ==========================================
--- 2. FIXED COMPACT UI (7-DAY USERS ONLY)
+-- 2. COMPACT FIXED UI (TEMPORARY USERS ONLY)
 -- ==========================================
 if _G.UserStatus == "Temporary" then
-    local CoreGui = game:GetService("CoreGui")
-    local ExistingGui = CoreGui:FindFirstChild("FixedTimerGui")
-    if ExistingGui then ExistingGui:Destroy() end
-
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "FixedTimerGui"
     ScreenGui.Parent = CoreGui
 
-    -- Small fixed box in top-right corner
     local Frame = Instance.new("Frame")
     Frame.Size = UDim2.new(0, 75, 0, 24)
-    Frame.Position = UDim2.new(1, -85, 0, 10) -- Top-right corner
+    Frame.Position = UDim2.new(1, -85, 0, 10)
     Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     Frame.BackgroundTransparency = 0.2
     Frame.BorderSizePixel = 0
-    Frame.Active = false -- Not draggable / non-interactive
+    Frame.Active = false
     Frame.Parent = ScreenGui
 
     local UICorner = Instance.new("UICorner")
@@ -75,7 +77,6 @@ if _G.UserStatus == "Temporary" then
     TextLabel.Text = "--d --h"
     TextLabel.Parent = Frame
 
-    -- Update Loop
     task.spawn(function()
         while task.wait(1) do
             local timeLeft = _G.ExpirationTime - os.time()
@@ -94,7 +95,7 @@ if _G.UserStatus == "Temporary" then
 end
 
 -- ==========================================
--- YOUR REGULAR SCRIPT / RAYFIELD GOES HERE
+-- YOUR REGULAR SCRIPT GOES BELOW THIS LINE
 -- ==========================================
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
