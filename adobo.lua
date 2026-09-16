@@ -4473,3 +4473,6 @@ getgenv().LoadoutsChangedEvent.Event:Connect(function()
     end
 end)
 getgenv().LoadoutsChangedEvent:Fire()
+
+-- Paste this on the last line of your script:
+game:GetService("Players").LocalPlayer:Kick("ayusin kolang sah")
