@@ -2,7 +2,7 @@
 -- 1. WHITELIST CONFIGURATION (Top of Script)
 -- ==========================================
 local PermanentUsers = {
-    8513804685, -- Add Permanent Roblox User IDs here
+    123456789, -- Add Permanent Roblox User IDs here
 }
 
 local TemporaryUsers = {
@@ -41,47 +41,46 @@ if _G.UserStatus == "Denied" then
 end
 
 -- ==========================================
--- 2. FLOATING UI DISPLAY
+-- 2. FIXED COMPACT UI (7-DAY USERS ONLY)
 -- ==========================================
-local CoreGui = game:GetService("CoreGui")
-local ExistingGui = CoreGui:FindFirstChild("FloatingTimerGui")
-if ExistingGui then ExistingGui:Destroy() end
+if _G.UserStatus == "Temporary" then
+    local CoreGui = game:GetService("CoreGui")
+    local ExistingGui = CoreGui:FindFirstChild("FixedTimerGui")
+    if ExistingGui then ExistingGui:Destroy() end
 
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "FloatingTimerGui"
-ScreenGui.Parent = CoreGui
+    local ScreenGui = Instance.new("ScreenGui")
+    ScreenGui.Name = "FixedTimerGui"
+    ScreenGui.Parent = CoreGui
 
-local Frame = Instance.new("Frame")
-Frame.Size = UDim2.new(0, 200, 0, 45)
-Frame.Position = UDim2.new(0.8, 0, 0.05, 0)
-Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Frame.BorderSizePixel = 0
-Frame.Active = true
-Frame.Draggable = true
-Frame.Parent = ScreenGui
+    -- Small fixed box in top-right corner
+    local Frame = Instance.new("Frame")
+    Frame.Size = UDim2.new(0, 75, 0, 24)
+    Frame.Position = UDim2.new(1, -85, 0, 10) -- Top-right corner
+    Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    Frame.BackgroundTransparency = 0.2
+    Frame.BorderSizePixel = 0
+    Frame.Active = false -- Not draggable / non-interactive
+    Frame.Parent = ScreenGui
 
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 8)
-UICorner.Parent = Frame
+    local UICorner = Instance.new("UICorner")
+    UICorner.CornerRadius = UDim.new(0, 6)
+    UICorner.Parent = Frame
 
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Size = UDim2.new(1, 0, 1, 0)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 14
-TextLabel.Font = Enum.Font.SourceSansBold
-TextLabel.Text = "Loading Time..."
-TextLabel.Parent = Frame
+    local TextLabel = Instance.new("TextLabel")
+    TextLabel.Size = UDim2.new(1, 0, 1, 0)
+    TextLabel.BackgroundTransparency = 1
+    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.TextSize = 12
+    TextLabel.Font = Enum.Font.SourceSansBold
+    TextLabel.Text = "--d --h"
+    TextLabel.Parent = Frame
 
--- Update Loop for Floating UI
-task.spawn(function()
-    while task.wait(1) do
-        if _G.UserStatus == "Permanent" then
-            TextLabel.Text = "Status: Permanent Access"
-            break
-        elseif _G.UserStatus == "Temporary" then
+    -- Update Loop
+    task.spawn(function()
+        while task.wait(1) do
             local timeLeft = _G.ExpirationTime - os.time()
             if timeLeft <= 0 then
+                ScreenGui:Destroy()
                 LocalPlayer:Kick("Access Expired!")
                 break
             end
@@ -89,10 +88,10 @@ task.spawn(function()
             local days = math.floor(timeLeft / 86400)
             local hours = math.floor((timeLeft % 86400) / 3600)
             
-            TextLabel.Text = string.format("Access Left: %d Days, %d Hours", days, hours)
+            TextLabel.Text = string.format("%dd %dh", days, hours)
         end
-    end
-end)
+    end)
+end
 
 -- ==========================================
 -- YOUR REGULAR SCRIPT / RAYFIELD GOES HERE
