@@ -1,7 +1,7 @@
 -- Whitelist Configuration
 local Whitelist = {
-    123456789, -- Replace with your Roblox User ID
-    987654321, -- Add more User IDs here, separated by commas
+    996981124, -- Replace with your Roblox User ID
+    8513804685, -- Add more User IDs here, separated by commas
 }
 
 local Players = game:GetService("Players")
