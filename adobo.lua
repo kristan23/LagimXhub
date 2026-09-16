@@ -1,6 +1,6 @@
 local PermanentUsers = {
     8513804685,
-    996981124,
+    99698112,
     123456789,
     123456788,
     555555555,
@@ -22,7 +22,7 @@ for _, id in ipairs(PermanentUsers) do
 end
 
 if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: Bayad ka muna boi!.")
+    LocalPlayer:Kick("Access Denied: You're not whitelisted. Dm Jowaoofficial_ on tiktok!.")
     return
 end
 
