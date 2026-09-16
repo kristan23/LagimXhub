@@ -1,6 +1,6 @@
 
 local PermanentUsers = {
-    ,8513804685,
+    8513804685,
     -- Put permanent Roblox User IDs here
 }
 
