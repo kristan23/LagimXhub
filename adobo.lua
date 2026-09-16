@@ -2,8 +2,7 @@
 -- 1. WHITELIST CONFIGURATION
 -- ==========================================
 local PermanentUsers = {
-    8513804685,
-    99698112,-- REPLACE WITH YOUR EXACT NUMERIC USER ID
+    8513804685,-- REPLACE WITH YOUR EXACT NUMERIC USER ID
 }
 
 local TemporaryUsers = {
