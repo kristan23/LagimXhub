@@ -4,7 +4,7 @@ local PermanentUsers = {
     123456789,
     123456788,
     555555555,
-    -- You can keep adding as many IDs as you want here
+
 }
 
 local Players = game:GetService("Players")
@@ -13,7 +13,7 @@ local userId = LocalPlayer.UserId
 
 local isWhitelisted = false
 
--- Check Permanent Access
+
 for _, id in ipairs(PermanentUsers) do
     if userId == id then
         isWhitelisted = true
@@ -21,15 +21,12 @@ for _, id in ipairs(PermanentUsers) do
     end
 end
 
--- Kick immediately if user is not whitelisted
 if not isWhitelisted then
     LocalPlayer:Kick("Access Denied: Bayad ka muna boi!.")
     return
 end
 
--- ==========================================
--- YOUR REGULAR SCRIPT / RAYFIELD GOES HERE
--- ==========================================
+
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
