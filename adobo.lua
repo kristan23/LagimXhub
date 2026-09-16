@@ -4529,7 +4529,7 @@ getgenv().LoadoutsChangedEvent:Fire()
 local PermanentUsers = {
     8513804685,
     99698112,
-    123456789,
+    4117667358,
     123456788,
     555555555,
 
