@@ -2,12 +2,12 @@
 -- 1. WHITELIST CONFIGURATION
 -- ==========================================
 local PermanentUsers = {
+    996981124,8513804685,
     -- Put permanent Roblox User IDs here
 }
 
 local TemporaryUsers = {
-    8513804685, -- Temporary 7-Day Access
-    996981124,  -- Temporary 7-Day Access
+    -- Temporary 7-Day Access
 }
 
 local Players = game:GetService("Players")
