@@ -33,7 +33,9 @@ if not getgenv().BeastHubFunctions then
     --DEV MODE
     -- getgenv().BeastHubFunctions = loadstring(game:HttpGet("https://pastebin.com/raw/SLUMGfXc"))()
 end
-
+-----================================
+---WHITELISTING==============
+---==========================================
 local PermanentUsers = {
     8513804685,
     99698112,
