@@ -41,38 +41,43 @@ if _G.UserStatus == "Denied" then
 end
 
 -- ==========================================
--- 2. RAYFIELD UI INITIALIZATION
+-- 2. FLOATING UI DISPLAY
 -- ==========================================
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local CoreGui = game:GetService("CoreGui")
+local ExistingGui = CoreGui:FindFirstChild("FloatingTimerGui")
+if ExistingGui then ExistingGui:Destroy() end
 
-local Window = Rayfield:CreateWindow({
-    Name = "Script Hub",
-    LoadingTitle = "Loading Whitelist Data...",
-    LoadingSubtitle = "by User",
-    ConfigurationSaving = {
-        Enabled = false,
-    }
-})
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "FloatingTimerGui"
+ScreenGui.Parent = CoreGui
 
--- Create a Tab for Main Controls and Status
-local MainTab = Window:CreateTab("Main", 4483362458)
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 200, 0, 45)
+Frame.Position = UDim2.new(0.8, 0, 0.05, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Frame.BorderSizePixel = 0
+Frame.Active = true
+Frame.Draggable = true
+Frame.Parent = ScreenGui
 
--- ==========================================
--- 3. LIVE TIMER PARAGRAPH
--- ==========================================
-local AccessParagraph = MainTab:CreateParagraph({
-    Title = "Subscription Status", 
-    Content = "Loading access time..."
-})
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 8)
+UICorner.Parent = Frame
 
--- Timer Loop: Runs in background to update UI text
+local TextLabel = Instance.new("TextLabel")
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.BackgroundTransparency = 1
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Loading Time..."
+TextLabel.Parent = Frame
+
+-- Update Loop for Floating UI
 task.spawn(function()
     while task.wait(1) do
         if _G.UserStatus == "Permanent" then
-            AccessParagraph:Set({
-                Title = "Subscription Status", 
-                Content = "Access Type: Permanent (Lifetime)"
-            })
+            TextLabel.Text = "Status: Permanent Access"
             break
         elseif _G.UserStatus == "Temporary" then
             local timeLeft = _G.ExpirationTime - os.time()
@@ -84,15 +89,14 @@ task.spawn(function()
             local days = math.floor(timeLeft / 86400)
             local hours = math.floor((timeLeft % 86400) / 3600)
             
-            AccessParagraph:Set({
-                Title = "Subscription Status", 
-                Content = string.format("Time Remaining: %d Days, %d Hours", days, hours)
-            })
+            TextLabel.Text = string.format("Access Left: %d Days, %d Hours", days, hours)
         end
     end
 end)
 
--- Put the rest of your features and buttons below this line
+-- ==========================================
+-- YOUR REGULAR SCRIPT / RAYFIELD GOES HERE
+-- ==========================================
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
