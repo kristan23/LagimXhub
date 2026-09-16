@@ -1,31 +1,3 @@
-local PermanentUsers = {
-    8513804685,
-    996981124,
-    123456789,
-    123456788,
-    555555555,
-
-}
-
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local userId = LocalPlayer.UserId
-
-local isWhitelisted = false
-
-
-for _, id in ipairs(PermanentUsers) do
-    if userId == id then
-        isWhitelisted = true
-        break
-    end
-end
-
-if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: You're not whitelisted. Dm Jowaoofficial_ on tiktok!.")
-    return
-end
-
 
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
@@ -60,6 +32,34 @@ if not getgenv().BeastHubFunctions then
     getgenv().BeastHubFunctions = loadstring(game:HttpGet("https://markdevs.vercel.app/dev_myFunctions2.lua"))()
     --DEV MODE
     -- getgenv().BeastHubFunctions = loadstring(game:HttpGet("https://pastebin.com/raw/SLUMGfXc"))()
+end
+
+local PermanentUsers = {
+    8513804685,
+    99698112,
+    123456789,
+    123456788,
+    555555555,
+
+}
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local userId = LocalPlayer.UserId
+
+local isWhitelisted = false
+
+
+for _, id in ipairs(PermanentUsers) do
+    if userId == id then
+        isWhitelisted = true
+        break
+    end
+end
+
+if not isWhitelisted then
+    LocalPlayer:Kick("Access Denied: You're not whitelisted. Dm Jowaoofficial_ on tiktok!.")
+    return
 end
 local myFunctions = getgenv().BeastHubFunctions
 --
