@@ -1,27 +1,48 @@
--- Whitelist Configuration
-local Whitelist = {
-    996981124, -- Replace with your Roblox User ID
-    8513804685, -- Add more User IDs here, separated by commas
+-- ==========================================
+-- WHITELIST CONFIGURATION
+-- ==========================================
+local PermanentUsers = {
+    8513804685, -- Permanent User ID
+}
+
+local TemporaryUsers = {
+    996981124, -- 7-Day User ID
 }
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
+local userId = LocalPlayer.UserId
 
--- Check if player is whitelisted
-local isWhitelisted = false
-for _, id in ipairs(Whitelist) do
-    if LocalPlayer.UserId == id then
-        isWhitelisted = true
+_G.UserStatus = "Denied"
+
+-- Check Permanent
+for _, id in ipairs(PermanentUsers) do
+    if userId == id then
+        _G.UserStatus = "Permanent"
         break
     end
 end
 
--- If not whitelisted, kick them instantly and stop execution
-if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: You are not authorized to use this script, BAYAD KA MUNA BOI!.")
+-- Check Temporary (Refreshes 7 days from execution time)
+if _G.UserStatus == "Denied" then
+    for _, id in ipairs(TemporaryUsers) do
+        if userId == id then
+            _G.UserStatus = "Temporary"
+            _G.ExpirationTime = os.time() + (7 * 24 * 60 * 60) -- Sets 7 Days from now
+            break
+        end
+    end
+end
+
+-- Kick if not whitelisted
+if _G.UserStatus == "Denied" then
+    LocalPlayer:Kick("Access Denied: You are not whitelisted.")
     return
 end
 
+-- ==========================================
+-- YOUR RAYFIELD UI SCRIPT GOES BELOW THIS LINE
+-- ==========================================
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
