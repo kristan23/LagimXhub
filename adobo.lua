@@ -92,6 +92,8 @@ if _G.UserStatus == "Temporary" then
         end
     end)
 end
+
+----real code----
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
