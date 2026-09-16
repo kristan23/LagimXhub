@@ -2,7 +2,8 @@
 -- 1. WHITELIST CONFIGURATION
 -- ==========================================
 local PermanentUsers = {
-    8513804685, -- Add Permanent Roblox User IDs here
+    8513804685,
+    996981124,-- Add Permanent Roblox User IDs here
 }
 
 local Players = game:GetService("Players")
