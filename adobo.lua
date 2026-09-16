@@ -1,3 +1,27 @@
+-- Whitelist Configuration
+local Whitelist = {
+    123456789, -- Replace with your Roblox User ID
+    987654321, -- Add more User IDs here, separated by commas
+}
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+-- Check if player is whitelisted
+local isWhitelisted = false
+for _, id in ipairs(Whitelist) do
+    if LocalPlayer.UserId == id then
+        isWhitelisted = true
+        break
+    end
+end
+
+-- If not whitelisted, kick them instantly and stop execution
+if not isWhitelisted then
+    LocalPlayer:Kick("Access Denied: You are not authorized to use this script, bayad muna boi.")
+    return
+end
+
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
@@ -4473,27 +4497,3 @@ getgenv().LoadoutsChangedEvent.Event:Connect(function()
     end
 end)
 getgenv().LoadoutsChangedEvent:Fire()
-
--- Whitelist Configuration
-local Whitelist = {
-    123456789, -- Replace with your Roblox User ID
-    987654321, -- Add more User IDs here, separated by commas
-}
-
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-
--- Check if player is whitelisted
-local isWhitelisted = false
-for _, id in ipairs(Whitelist) do
-    if LocalPlayer.UserId == id then
-        isWhitelisted = true
-        break
-    end
-end
-
--- If not whitelisted, kick them instantly and stop execution
-if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: You are not authorized to use this script, bayad muna boi.")
-    return
-end
