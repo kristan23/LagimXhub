@@ -157,7 +157,7 @@ local function createEggStatusGUI()
 
     local frame = Instance.new("Frame")
     frame.Size = UDim2.new(0, 140, 0, 16)
-    frame.Position = UDim2.new(0, 10, 0, 90)
+    frame.Position = UDim2.new(0, 10, 0, 30)
     frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     frame.BackgroundTransparency = 0.3
     frame.BorderSizePixel = 0
