@@ -810,14 +810,25 @@ local function getPositionForPlaceEggs()
         
     elseif positionForPlaceEggs == "Right - X Pattern" then
         eggOffsets = {
-        -- Center (1 egg)
-            Vector3.new(16, 0, 0),
-        -- Top-Left to Bottom-Right Diagonal (6 eggs)
-            Vector3.new(8, 0, -24),  Vector3.new(11, 0, -16), Vector3.new(13, 0, -8),
-            Vector3.new(19, 0, 8),   Vector3.new(21, 0, 16),  Vector3.new(24, 0, 24),
-        -- Top-Right to Bottom-Left Diagonal (6 eggs)
-            Vector3.new(24, 0, -24), Vector3.new(21, 0, -16), Vector3.new(19, 0, -8),
-            Vector3.new(13, 0, 8),   Vector3.new(11, 0, 16),  Vector3.new(8, 0, 24),
+            Vector3.new(18, 0, -36),
+            Vector3.new(26, 0, -36),
+
+            Vector3.new(22, 0, -40),
+            Vector3.new(30, 0, -40),
+
+            Vector3.new(26, 0, -44),
+            Vector3.new(34, 0, -44),
+
+            Vector3.new(30, 0, -48),
+
+            Vector3.new(26, 0, -52),
+            Vector3.new(34, 0, -52),
+
+            Vector3.new(22, 0, -56),
+            Vector3.new(30, 0, -56),
+
+            Vector3.new(18, 0, -60),
+            Vector3.new(26, 0, -60),
         }
         
     elseif positionForPlaceEggs == "Random - stacked" then
@@ -1759,7 +1770,7 @@ local Input_delayToHatch = PetEggs:CreateInput({
 
 local position_placeEggs = PetEggs:CreateDropdown({
     Name = "Position",
-    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - Hourglass", "Random - stacked", "Right - X Pattern"},
+    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - Hourglass", "Right - X Pattern", "Random - stacked"",},
     CurrentOption = {"Left - Diamond"},
     MultipleOptions = false,
     Flag = "positionPlaceEggs", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
