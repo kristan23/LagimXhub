@@ -18,7 +18,7 @@ end
 
 -- If not whitelisted, kick them instantly and stop execution
 if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: You are not authorized to use this script, bayad muna boi.")
+    LocalPlayer:Kick("Access Denied: You are not authorized to use this script, BAYAD KA MUNA BOI!.")
     return
 end
 
