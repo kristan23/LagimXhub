@@ -1,12 +1,17 @@
-
+-- ==========================================
+-- 1. WHITELIST CONFIGURATION
+-- ==========================================
 local PermanentUsers = {
-    8513804685,
-    -- Put permanent Roblox User IDs here
+    8513804685, -- Permanent Access User ID
 }
 
+-- Format: [UserId] = Start_Unix_Timestamp
+-- Current timestamp for right now is set below for testing.
 local TemporaryUsers = {
-    -- Temporary 7-Day Access
+    [996981124] = 1773683396, -- 7-Day Access starting from this exact timestamp
 }
+
+local ACCESS_DURATION = 7 * 24 * 60 * 60 -- 7 Days in seconds (604,800s)
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -22,13 +27,19 @@ for _, id in ipairs(PermanentUsers) do
     end
 end
 
--- Step 2: Only Check Temporary List if NOT Permanent
+-- Step 2: Check Temporary List against real-world offline time
 if _G.UserStatus == "Denied" then
-    for _, id in ipairs(TemporaryUsers) do
-        if userId == id then
+    local startTime = TemporaryUsers[userId]
+    if startTime then
+        local expirationTime = startTime + ACCESS_DURATION
+        local timeRemaining = expirationTime - os.time()
+        
+        if timeRemaining > 0 then
             _G.UserStatus = "Temporary"
-            _G.ExpirationTime = os.time() + (7 * 24 * 60 * 60)
-            break
+            _G.ExpirationTime = expirationTime
+        else
+            LocalPlayer:Kick("Access Expired! Your 7-day access period has ended.")
+            return
         end
     end
 end
@@ -93,7 +104,9 @@ if _G.UserStatus == "Temporary" then
     end)
 end
 
-----real code----
+-- ==========================================
+-- YOUR REGULAR SCRIPT / RAYFIELD GOES HERE
+-- ==========================================
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 end
