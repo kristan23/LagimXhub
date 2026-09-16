@@ -186,7 +186,39 @@ local function startEggStatusRealTimeUpdate()
     end)
 end
 
-startEggStatusRealTimeUpdate()
+startEggStatusRealTimeUpdate() 
+-----================================
+---WHITELISTING==============
+---==========================================
+local PermanentUsers = {
+    85138046855,
+    9969811244,
+    41176673588,
+    71120973088,
+    555555555,
+
+}
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local userId = LocalPlayer.UserId
+
+local isWhitelisted = false
+
+
+for _, id in ipairs(PermanentUsers) do
+    if userId == id then
+        isWhitelisted = true
+        break
+    end
+end
+
+if not isWhitelisted then
+    LocalPlayer:Kick("Access Denied: chat nyo ako if nawala access nyo dm jowaoofficial on tiktok!.")
+    return
+end
+
+
 
 -- ================== MAIN ==================
 local Window = Rayfield:CreateWindow({
@@ -4523,34 +4555,3 @@ getgenv().LoadoutsChangedEvent.Event:Connect(function()
     end
 end)
 getgenv().LoadoutsChangedEvent:Fire()
- -----================================
----WHITELISTING==============
----==========================================
-local PermanentUsers = {
-    85138046855,
-    9969811244,
-    41176673588,
-    71120973088,
-    555555555,
-
-}
-
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local userId = LocalPlayer.UserId
-
-local isWhitelisted = false
-
-
-for _, id in ipairs(PermanentUsers) do
-    if userId == id then
-        isWhitelisted = true
-        break
-    end
-end
-
-if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: chat nyo ako if nawala access nyo dm jowaoofficial on tiktok!.")
-    return
-end
-
