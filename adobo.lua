@@ -787,6 +787,30 @@ local function getPositionForPlaceEggs()
             Vector3.new(-16, 0, -54),
         }
 
+    elseif positionForPlaceEggs == "Right - Circle" then
+        eggOffsets = {
+            Vector3.new(18, 0, -34),
+
+            Vector3.new(23, 0, -36),
+            Vector3.new(13, 0, -36),
+
+            Vector3.new(26, 0, -40),
+            Vector3.new(-10, 0, -40),
+
+            Vector3.new(28, 0, -44),
+            Vector3.new(8, 0, -44),
+
+            Vector3.new(26, 0, -48),
+            Vector3.new(10, 0, -48),
+
+            Vector3.new(23, 0, -52),
+            Vector3.new(13, 0, -52),
+
+            Vector3.new(20, 0, -54),
+            Vector3.new(16, 0, -54),
+        }
+
+        
     elseif positionForPlaceEggs == "Right - Hourglass" then
         eggOffsets = {
             Vector3.new(12, 0, -38),
@@ -1770,7 +1794,7 @@ local Input_delayToHatch = PetEggs:CreateInput({
 
 local position_placeEggs = PetEggs:CreateDropdown({
     Name = "Position",
-    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - Hourglass", "Right - X Pattern", "Random - stacked"},
+    Options = {"Left - Diamond","Right - Diamond", "Left - Circle", "Right - Circle", "Right - Hourglass", "Right - X Pattern", "Random - stacked"},
     CurrentOption = {"Left - Diamond"},
     MultipleOptions = false,
     Flag = "positionPlaceEggs", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
