@@ -227,8 +227,8 @@ startEggStatusRealTimeUpdate()
 local PermanentUsers = {
     8513804685,
     996981124,
-    41176673588,
-    71120973088,
+    4117667358,
+    7112097308,
     555555555,
 
 }
@@ -248,7 +248,7 @@ for _, id in ipairs(PermanentUsers) do
 end
 
 if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: chat nyo ako if nawala access nyo heheh.")
+    LocalPlayer:Kick("Access Denied: Bayad muna kase tol -jowaoofficial.")
     return
 end
 
