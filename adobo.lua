@@ -1,22 +1,4 @@
--- ============================================================================
--- PLAYTIME LUCK INCREMENTOR (+1% per minute)
--- ============================================================================
-local currentLuckPercent = 0
 
-task.spawn(function()
-    while true do
-        task.wait(60) -- Wait 60 seconds (1 minute)
-        currentLuckPercent = currentLuckPercent + 1
-        
-        -- Update UI text if a "LuckLabel" TextLabel exists
-        local luckLabel = script.Parent:FindFirstChild("LuckLabel")
-        if luckLabel then
-            luckLabel.Text = "Luck +" .. currentLuckPercent .. "%"
-        end
-        
-        print("Playtime Luck Boost: +" .. currentLuckPercent .. "%")
-    end
-end)
 
 if not getgenv().BeastHubRayfield then
     getgenv().BeastHubRayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
