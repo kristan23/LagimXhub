@@ -256,7 +256,7 @@ for _, id in ipairs(PermanentUsers) do
 end
 
 if not isWhitelisted then
-    LocalPlayer:Kick("Access Denied: You're not whitelisted direct message @jowaoofficial on tiktok to avail this script.")
+    LocalPlayer:Kick("You're not whitelisted direct message @jowaoofficial on tiktok to avail this script thankyou!.")
     return
 end
 
