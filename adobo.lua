@@ -3113,7 +3113,7 @@ local Toggle_bhubESP = PetEggs:CreateToggle({
 
                                 if isHuge then
                                     if rawKG < 5 then
-                                        label.Text = '<font color="rgb(0,255,255)"><b>TADOOOO!</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(0,255,255)"><b>SULASOK KANA LANG BOI!</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     elseif rawKG < 8 then
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
                                         label.Text = '<font color="rgb(0,255,255)"><b>DINOROBONG TUBO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
