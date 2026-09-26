@@ -946,21 +946,22 @@ Vector3.new(39, 0, -54),
 
     elseif positionForPlaceEggs == "Left - Z Shape" then
         eggOffsets = {
-            Vector3.new(-11, 0, -33),
-            Vector3.new(-6, 0, -33),
-            Vector3.new(-1, 0, -33),
-            Vector3.new(4, 0, -33),
-            Vector3.new(9, 0, -33),
+Vector3.new(-19, 0, -34),
+Vector3.new(-24, 0, -34),
+Vector3.new(-29, 0, -34),
+Vector3.new(-34, 0, -34),
+Vector3.new(-39, 0, -34),
 
-            Vector3.new(-11, 0, -38),
-            Vector3.new(-6, 0, -43),
-            Vector3.new(-1, 0, -48),
-            Vector3.new(4, 0, -53),
+Vector3.new(-22, 0, -39),
+Vector3.new(-27, 0, -44),
+Vector3.new(-32, 0, -49),
 
-            Vector3.new(-11, 0, -63),
-            Vector3.new(-6, 0, -63),
-            Vector3.new(-1, 0, -63),
-            Vector3.new(4, 0, -63),   
+Vector3.new(-19, 0, -54),
+Vector3.new(-24, 0, -54),
+Vector3.new(-29, 0, -54),
+Vector3.new(-34, 0, -54),
+Vector3.new(-39, 0, -54),
+
         }
 
 
