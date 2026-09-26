@@ -909,19 +909,19 @@ local function getPositionForPlaceEggs()
 
  elseif positionForPlaceEggs == "L" then
         eggOffsets = {
+            Vector3.new(49, 0, -33),
+            Vector3.new(44, 0, -33),
+            Vector3.new(39, 0, -33),
+            Vector3.new(34, 0, -33),
+            Vector3.new(29, 0, -33),
+            Vector3.new(24, 0, -33),
             Vector3.new(19, 0, -33),
-            Vector3.new(19, 0, -38),
-            Vector3.new(19, 0, -43),
-            Vector3.new(19, 0, -48),
-            Vector3.new(19, 0, -53),
-            Vector3.new(19, 0, -58),
 
-            Vector3.new(19, 0, -63),
-            Vector3.new(24, 0, -63),
-            Vector3.new(29, 0, -63),
-            Vector3.new(34, 0, -63),
-            Vector3.new(39, 0, -63),
-            Vector3.new(44, 0, -63),
+            Vector3.new(49, 0, -38),
+            Vector3.new(49, 0, -43),
+            Vector3.new(49, 0, -48),
+            Vector3.new(49, 0, -53),
+            Vector3.new(49, 0, -58),
             Vector3.new(49, 0, -63),
         }
         
