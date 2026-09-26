@@ -916,12 +916,12 @@ local function getPositionForPlaceEggs()
             Vector3.new(24, 0, -36),
             Vector3.new(28, 0, -36),
 
-            Vector3.new(28, 0, -40),
-            Vector3.new(28, 0, -44),
-            Vector3.new(28, 0, -48),
-            Vector3.new(28, 0, -52),
-            Vector3.new(28, 0, -56),
-            Vector3.new(28, 0, -60),
+            Vector3.new(8, 0, -40),
+            Vector3.new(8, 0, -44),
+            Vector3.new(8, 0, -48),
+            Vector3.new(8, 0, -52),
+            Vector3.new(8, 0, -56),
+            Vector3.new(8, 0, -60),
         }
         
  elseif positionForPlaceEggs == "Right - Z Shape" then
