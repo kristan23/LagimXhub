@@ -933,9 +933,9 @@ Vector3.new(29, 0, -34),
 Vector3.new(34, 0, -34),
 Vector3.new(39, 0, -34),
 
-Vector3.new(21, 0, -39),
-Vector3.new(26, 0, -44),
-Vector3.new(31, 0, -49),
+Vector3.new(22, 0, -39),
+Vector3.new(27, 0, -44),
+Vector3.new(32, 0, -49),
 
 Vector3.new(19, 0, -54),
 Vector3.new(24, 0, -54),
