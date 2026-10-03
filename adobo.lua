@@ -995,7 +995,8 @@ elseif positionForPlaceEggs == "Left - Spread out" then
             Vector3.new(-9, 0, -63),
         }
 
-elseif positionForPlaceEggs == "Right - Spread out"         eggOffsets = {
+elseif positionForPlaceEggs == "Right - Spread out" then
+        eggOffsets = {
             Vector3.new(10, 0, -18),
             Vector3.new(19, 0, -18),
             Vector3.new(28, 0, -18),
