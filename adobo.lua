@@ -3122,16 +3122,16 @@ local Toggle_bhubESP = PetEggs:CreateToggle({
 
                                 if isHuge then
                                     if rawKG < 5 then
-                                        label.Text = '<font color="rgb(0,255,255)"><b>SULASOK KANA LANG BOI!</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(0,255,255)"><b>SULASOK KANA LANG BOI!</b></font>\n<font color="rgb(0,255,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     elseif rawKG < 8 then
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(0,255,255)"><b>DINOROBONG TUBO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(0,255,255)"><b>DINOROBONG TUBO! ('..brontoKG..'kg)</b></font>\n<font color="rgb(0,255,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     else
                                         local brontoKG = string.format("%.2f", rawKG * 1.3)
-                                        label.Text = '<font color="rgb(0,255,255)"><b>PALDOOOOO SI LOLO !!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                        label.Text = '<font color="rgb(0,255,255)"><b>PALDOOOOO SI LOLO !!! ('..brontoKG..'kg)</b></font>\n<font color="rgb(0,255,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                     end
                                 else
-                                    label.Text = '<font color="rgb(204,204,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
+                                    label.Text = '<font color="rgb(0,255,0)"><b>' .. petName .. '</b></font><b> = ' .. petKG .. 'kg</b>'
                                 end
 
                                 label.TextColor3 = Color3.fromRGB(0,255,0)
@@ -3578,7 +3578,7 @@ local Toggle_smartAutoHatch = PetEggs:CreateToggle({
                                                     -- Get values using string match 
                                                     -- local petName = string.match(text, "0%)'>(.-)</font>")
                                                     -- local stringKG = string.match(text, ".*=%s*<font.-'>(.-)</font>")
-                                                    local petName = text:match('rgb%(%s*204,%s*204,%s*0%s*%)"><b>(.-)</b></font>')
+                                                    local petName = text:match('rgb%(%s*0,%s*255,%s*0%s*%)"><b>(.-)</b></font>')
                                                     local stringKG = text:match("=%s*(%d+%.?%d*)kg")
 
                                                     -- print("petName")
