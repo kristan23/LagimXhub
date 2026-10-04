@@ -1017,6 +1017,51 @@ elseif positionForPlaceEggs == "Right - Spread out" then
             Vector3.new(28, 0, -63),
             Vector3.new(37, 0, -63),
         }
+    elseif positionForPlaceEggs == "Left - stacked" then
+        eggOffsets = {
+            Vector3.new(-30, 0, -12),
+            Vector3.new(-27, 0, -12),
+            Vector3.new(-24, 0, -12),
+            Vector3.new(-21, 0, -12),
+
+            Vector3.new(-30, 0, -15),
+            Vector3.new(-27, 0, -15),
+            Vector3.new(-24, 0, -15),
+            Vector3.new(-21, 0, -15),
+
+            Vector3.new(-30, 0, -18),
+            Vector3.new(-27, 0, -18),
+            Vector3.new(-24, 0, -18),
+            Vector3.new(-21, 0, -18),
+
+            Vector3.new(-30, 0, -21),
+            Vector3.new(-27, 0, -21),
+            Vector3.new(-24, 0, -21),
+            Vector3.new(-21, 0, -21),
+        }
+
+    elseif positionForPlaceEggs == "Right - stacked" then
+        eggOffsets = {
+            Vector3.new(16, 0, -12),
+            Vector3.new(19, 0, -12),
+            Vector3.new(22, 0, -12),
+            Vector3.new(25, 0, -12),
+
+            Vector3.new(16, 0, -15),
+            Vector3.new(19, 0, -15),
+            Vector3.new(22, 0, -15),
+            Vector3.new(25, 0, -15),
+
+            Vector3.new(16, 0, -18),
+            Vector3.new(19, 0, -18),
+            Vector3.new(22, 0, -18),
+            Vector3.new(25, 0, -18),
+
+            Vector3.new(16, 0, -21),
+            Vector3.new(19, 0, -21),
+            Vector3.new(22, 0, -21),
+            Vector3.new(25, 0, -21),
+        }
 
     
         
@@ -1959,7 +2004,7 @@ local Input_delayToHatch = PetEggs:CreateInput({
 
 local position_placeEggs = PetEggs:CreateDropdown({
     Name = "Position",
-    Options = {"Left - Spread out","Right - Spread out","Left - Diamond","Right - Diamond", "Left - Circle", "Right - Circle", "Left - Y Shape", "Right - Y Shape", "Left - Z Shape", "Right - Z Shape", "L (fixed)", "Random - stacked"},
+    Options = {"Left - Spread out","Right - Spread out","Left - stacked","Right - stacked","Left - Diamond","Right - Diamond", "Left - Circle", "Right - Circle", "Left - Y Shape", "Right - Y Shape", "Left - Z Shape", "Right - Z Shape", "L (fixed)", "Random - stacked"},
     CurrentOption = {"Left - Diamond"},
     MultipleOptions = false,
     Flag = "positionPlaceEggs", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
